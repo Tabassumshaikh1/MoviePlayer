@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h3 class="card-title text-center text-danger">Add Video From Here</h3>
+          <form [formGroup]="addVideoForm">
+            <div class="form-group mb-3">
+              <label for="thumbnail">Thumbnail</label>
+              <input
+                type="text"
+                class="form-control"
+                id="thumbnail"
+                formControlName="thumbnail"/>
+              <div
+                *ngIf="formdata['thumbnail'].invalid && formdata['thumbnail'].touched">
+                <div
+                  class="mt-2"
+                  *ngIf="formdata['thumbnail'].errors &&
+                         formdata['thumbnail'].errors['required']">
+                  <span class="text-danger">This field is required*</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="video_url">Video Url</label>
+              <input
+                type="text"
+                class="form-control"
+                id="video_url"
+                formControlName="video_url"/>
+              <div
+                *ngIf="formdata['video_url'].invalid && formdata['video_url'].touched">
+                <div
+                  class="mt-2"
+                  *ngIf="
+                    formdata['video_url'].errors &&
+                    formdata['video_url'].errors['required']">
+                  <span class="text-danger">This field is required*</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-secondary m-1">
+                <a class="text-decoration-none text-white" routerLink="/">Back</a>
+              </button>
+              <button type="submit" class="btn btn-danger" (click)="sendData()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

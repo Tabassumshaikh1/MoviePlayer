@@ -1,0 +1,17 @@
+<div class="container mt-2">
+  <div class="d-flex">
+  <iframe
+    width="100%"
+    height="650vh"
+    [src]="data.video_url |safe"
+    poster="data.thumbnil |safe"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <div>
+    <button class="btn btn-secondary m-2" routerLink="/"><i class="fa">&#xf00d;</i></button>
+    <button class="btn btn-danger m-2" (click)="deleteVideo(data._id)"> <i class="fa">&#xf014;</i></button>
+  </div>
+</div>
+</div>
